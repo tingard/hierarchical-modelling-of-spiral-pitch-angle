@@ -1,0 +1,17 @@
+phi_gal_interval__   -1.788300e+02
+sigma_gal_log__      -1.230000e+00
+c                    -8.514900e+02
+sigma_r_log__        -8.000000e-01
+phi_arm_interval__    1.445300e+02
+Likelihood           -1.831087e+11
+Name: Log-probability of test_point, dtype: float64
+Auto-assigning NUTS sampler...
+Initializing NUTS using advi+adapt_diag...
+Convergence achieved at 59900-----------------------------------------------------------------| 29.94% [59887/200000 14:20<33:32 Average Loss = 1.0688e+05]
+Interrupted at 59,899 [29%]: Average Loss = 6.1584e+60
+Multiprocess sampling (2 chains in 2 jobs)
+NUTS: [phi_arm, sigma_r, c, sigma_gal, phi_gal]
+Sampling 2 chains for 500 tune and 1_000 draw iterations (1_000 + 2_000 draws total) took 2723 seconds./3000 45:22<00:00 Sampling 2 chains, 11 divergences]
+There were 11 divergences after tuning. Increase `target_accept` or reparameterize.
+Number of Divergent 11
+Percentage of Divergent 1.1
