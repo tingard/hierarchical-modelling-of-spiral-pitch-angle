@@ -43,14 +43,29 @@ We make use of these results to examine how spiral properties vary with galaxy m
 
 To summarise: we do not find evidence that the presence or strength of a bar impacts spiral arm tightness, and do not find evidence to discount the model of spiral winding proposed by [Pringle & Dobbs (2019)](https://arxiv.org/pdf/1909.10291.pdf) (given limits of $15 < \phi < 50$). For further detail, please see the upcoming paper!
 
-#### Morphology
+### Morphology
 
 ![](./plots/bulge_bar_phigal_distribution.jpg)
 
 Testing both galaxy and individual arm pitch angle vs morphology (we cannot reject the null hypothesis at the 1% level for any of our samples):
 
+
 ![](./plots/bulge_bar_test_results.jpg)
 
+### Spiral winding
+
+We want to investigate whether spirals are static, rotating as rigid bodies,
+
+![Video showing static spirals](./plots/qsdw_spiral.mp4)
+
+whether their arms wind, dissapate and reform together,
+
+![Video showing transient, linked spirals](./plots/linked_winding_spirals.mp4)
+
+or whether each arm is formed, winds up and dissapates independently:
+
+
+![Video showing independently winding spirals](./plots/reccurent_spiral.mp4)
 
 
 Testing both galaxy and individual spiral winding (we cannot reject the null hypothesis at the 1% level for any of our samples):
