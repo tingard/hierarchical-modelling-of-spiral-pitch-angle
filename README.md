@@ -47,7 +47,7 @@ To summarise: we do not find evidence that the presence or strength of a bar imp
 
 ![](./plots/bulge_bar_phigal_distribution.jpg)
 
-Testing both galaxy and individual arm pitch angle vs morphology (we cannot reject the null hypothesis at the 1% level for any of our samples):
+Testing both galaxy and individual arm pitch angle vs morphology, we cannot reject the null hypothesis at the 1% level for a significant proportion of our samples (1% or fewer):
 
 
 ![](./plots/bulge_bar_test_results.jpg)
@@ -56,19 +56,20 @@ Testing both galaxy and individual arm pitch angle vs morphology (we cannot reje
 
 We want to investigate whether spirals are static, rotating as rigid bodies,
 
-![Video showing static spirals](./plots/qsdw_spiral.mp4)
+[Video showing static spirals](./plots/qsdw_spiral.mp4)
 
 whether their arms wind, dissapate and reform together,
 
-![Video showing transient, linked spirals](./plots/linked_winding_spirals.mp4)
+[Video showing transient, linked spirals](./plots/linked_winding_spirals.mp4)
 
 or whether each arm is formed, winds up and dissapates independently:
 
 
-![Video showing independently winding spirals](./plots/reccurent_spiral.mp4)
+[Video showing independently winding spirals](./plots/reccurent_spiral.mp4)
 
-
-Testing both galaxy and individual spiral winding (we cannot reject the null hypothesis at the 1% level for any of our samples):
+We test the distribution of galaxy and arm pitch-angles against one uniform in cot between 15˚ and 50˚. Finding that we cannot reject the null hypothesis at the 1% level  for a significant proportion of our samples (2% or fewer):
 
 ![](./plots/combined_cot_uniform_marginalized_tests.jpg)
+
+Notably, small shifts in the lower limit on $\phi$ will cause us to reject the hypothesis for most of the samples, suggesting further investigation into this model is required for it to be a well-understood test.
 
