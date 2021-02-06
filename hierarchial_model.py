@@ -30,7 +30,8 @@ class BHSM():
                 np.stack((
                     arm_T,
                     arm_R,
-                    np.tile(sum(self.gal_n_arms.iloc[:gal_n]) + arm_n, len(arm_T)),
+                    np.tile(
+                        sum(self.gal_n_arms.iloc[:gal_n]) + arm_n, len(arm_T)),
                     np.tile(gal_n, len(arm_T))
                 ), axis=-1)
                 for gal_n, galaxy in enumerate(galaxies)
@@ -162,10 +163,13 @@ class UniformBHSM(BHSM):
 
             # Phi arm is drawn from a truncated normal centred on phi_gal with
             # spread sigma_gal
+            gal_idx = self.gal_arm_map.astype('int32')
             self.phi_arm = pm.TruncatedNormal(
                 'phi_arm',
-                mu=self.phi_gal[self.gal_arm_map], sd=self.sigma_gal,
-                lower=0, upper=90,
+                mu=self.phi_gal[gal_idx],
+                sd=self.sigma_gal,
+                lower=0,
+                upper=90,
                 shape=self.n_arms
             )
 
@@ -174,9 +178,11 @@ class UniformBHSM(BHSM):
 
             # r = exp(theta * tan(phi) + c)
             # do not track this as it uses a lot of memory
+            arm_idx = self.data['arm_index'].values.astype('int32')
             r = tt.exp(
-                self.b[self.data['arm_index'].values] * self.data['theta']
-                + self.c[self.data['arm_index'].values]
+                self.b[arm_idx]
+                * self.data['theta']
+                + self.c[arm_idx]
             )
 
             # likelihood function (assume likelihood here)
@@ -244,7 +250,7 @@ class RobustUniformBHSM(BHSM):
                 'Likelihood',
                 mu=r,
                 sigma=self.sigma_r,
-                nu=1, #self.nu,
+                nu=1,  # self.nu,
                 observed=self.data['r'],
             )
 
@@ -287,7 +293,8 @@ class ArchimedianBHSM(BHSM):
                     assert isinstance(n, float) and n != 0, msg
 
                 self.n_choice = None
-                self.n = pm.Deterministic('n', np.repeat(n, len(self.galaxies)))
+                self.n = pm.Deterministic(
+                    'n', np.repeat(n, len(self.galaxies)))
 
             self.chirality_correction = tt.switch(self.n < 0, -1, 1)
             self.a = pm.HalfCauchy(
@@ -347,7 +354,8 @@ class ArchimedianBHSM(BHSM):
 
         print(test_point)
         if np.isnan(test_point['{}Likelihood'.format(l_key)]):
-            print('The model\'s test point had an undefined likelihood, meaning sampling will fail')
+            print(
+                'The model\'s test point had an undefined likelihood, meaning sampling will fail')
             sys.exit(0)
 
         # Sampling

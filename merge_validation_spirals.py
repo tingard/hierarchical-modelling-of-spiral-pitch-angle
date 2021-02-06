@@ -7,7 +7,7 @@ from tqdm import tqdm
 
 parser = argparse.ArgumentParser(
     description=(
-        'Run hierarchial model and save output'
+        'Merge spiral arms from validation and main run galaxies'
     )
 )
 parser.add_argument(

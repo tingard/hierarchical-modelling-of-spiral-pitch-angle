@@ -1,12 +1,14 @@
+import argparse
+import generate_sample
+from hierarchial_model import UniformBHSM
 import sys
 import pickle
 import pandas as pd
 import pymc3 as pm
-from hierarchial_model import UniformBHSM
-import generate_sample
+import theano
 
+theano.config.gcc.cxxflags = "-Wno-c++11-narrowing"
 
-import argparse
 
 parser = argparse.ArgumentParser(
     description=(
