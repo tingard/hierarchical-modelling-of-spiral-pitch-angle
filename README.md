@@ -73,3 +73,46 @@ We test the distribution of galaxy and arm pitch-angles against one uniform in c
 
 Notably, small shifts in the lower limit on $\phi$ will cause us to reject the hypothesis for most of the samples, suggesting further investigation into this model is required for it to be a well-understood test.
 
+
+## Key Notebooks in this repository
+
+In order to walk the reader through the analysis process, many Jupyter Notebooks have been authored to explain the stages involved. Below we detail the motivation and purpose of some key notebooks. Please submit an issue if any information is incorrect, if you have any queries or suggestions for improvements, or if you wish another notebook to be included in this list!
+
+
+### A tutorial of the data structures used
+
+`data_structure_tutorial.ipynb`
+
+This notebook walks through the main data structures used in this analysis, from the spiral `Pipeline` and `Arm` objects output by the Galaxy Builder analysis code, through to the outputs of the `UniformBHSM` (Uniform Bayesian Hierarchical Spiral Model) class used to perform inference on the hierarchical model presented in the paper.
+
+### Performing inference with the model
+
+`performing_inference.ipynb`
+
+In this notebook, we demonstrate the usage of the hierarchical model classes to fit a small number of galaxies from the dataset. It is a scaled-down version of `do_inference.py`.
+
+
+### Plotting the spiral arm fits from the model
+
+`plot_resulting_fits.ipynb`
+
+This notebook recreates Figure 4 from the paper, showing the resulting logarithmic spiral fits overlaid on the source data points.
+
+
+### Explaining the frequency of one-armed spirals in the Galaxy Builder dataset
+
+`examining_one_armed_spirals.ipynb`
+
+It was noted that a surprisingly large number of galaxies only contained one spiral arm. We demonstrate that this is primarily an artefact of the clustering used to group volunteer spiral arms, and is therefore a result of the trade-off between false positives and false negatives required when choosing spiral arm clustering hyperparameters.
+
+### Investigating the link between morphology and pitch angle
+
+`morphology_comparison.ipynb`
+
+This notebook performs the analysis present in Section 3.2 of the paper, investigating whether we see evidence of a link between spiral pitch angle and the strength of a galaxy's bulge or bar. We find no statistically significant evidence for such a link.
+
+### Investigating the model of spiral winding from Pringle & Dobbs (2019)
+
+`testing_spiral_winding.ipynb`
+
+This notebook performs the analysis present in Section 3.3 of the paper, investigating whether we see evidence against the model of spiral winding proposed by [Pringle and Dobbs (2019)](https://ui.adsabs.harvard.edu/abs/2019MNRAS.490.1470P/abstract). We find no evidence against their model for either galaxy pitch angle or arm pitch angle.

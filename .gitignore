@@ -2,3 +2,4 @@ lib/NSA_GalaxyZoo.fits
 lib/fitting_metadata.pkl
 lib/spiral_arms.pickle
 lib/merged_arms.pickle
+.ipynb_checkpoints
