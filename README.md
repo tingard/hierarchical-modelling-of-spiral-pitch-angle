@@ -8,6 +8,8 @@ Exploiting the results of the *Galaxy Builder* project ([Lingard et al. 2020]((h
 
 We wish to use these measurements to examine the links between pitch angle and morphology, and test the simple model of spiral winding proposed by [Pringle and Dobbs (2019)](https://ui.adsabs.harvard.edu/abs/2019MNRAS.490.1470P/abstract).
 
+The full method is documented in our paper (link to be added when published), but we provide a summary below. 
+
 ## Intro to Galaxy Builder
 Volunteers were presented with an image of a spiral galaxy, selected using redshift and morphology obtained through Galaxy Zoo 2. The full sample selection is detailed in Hart et al. (2017), but only a subset of these galaxies were classified in *Galaxy Builder*, prioritising low-redshift well-resolved images. The resulting distribution of galaxy stellar mass is therefore not truly representative of the population:
 
@@ -29,7 +31,7 @@ Early examination of the data suggested it was often the case that different arm
 
 ![](./plots/example-spiral-angles.pdf)
 
-However, most analysis of spiral pitch angle (and theories associated with spiral formation and evolution), do not make specific predictions for arm pitch angles, instead often quoting a single value for the "pitch angle of a galaxy". For this reason, a hierarchical view of galaxy pitch angle was adopted, where the pitch angle along an individual arm ($\phi_\mathrm{arm}$) was assumed to be constant (a logarithmic spiral), but arms in a galaxy were allowed to vary around some group mean ($\phi_\mathrm{gal}$), distributed Normally (and truncated to being between 0˚ and 90˚) with some spread common to all galaxies in the sample ($\sigma_\mathrm{gal}$). The motivation behind assuming a common $\sigma_\mathrm{gal}$ was purely due to the limited sample size and low number of arms measured per galaxy.
+However, most analysis of spiral pitch angle (and theories associated with spiral formation and evolution), do not make specific predictions for arm pitch angles, instead often quoting a single value for the "pitch angle of a galaxy". For this reason, a hierarchical view of galaxy pitch angle was adopted, where the pitch angle along an individual arm (phi_{arm}) was assumed to be constant (a logarithmic spiral), but arms in a galaxy were allowed to vary around some group mean (phi_{gal}), distributed Normally (and truncated to being between 0˚ and 90˚) with some spread common to all galaxies in the sample (sigma_{gal}). The motivation behind assuming a common sigma_{gal} was purely due to the limited sample size and low number of arms measured per galaxy.
 
 For full details of the hierarchical model, please refer to the paper (or if you can read PyMC check out the `UniformBHSM` class in `hierarchial_model.py` - and please provide feedback to help make the code more readable!
 
