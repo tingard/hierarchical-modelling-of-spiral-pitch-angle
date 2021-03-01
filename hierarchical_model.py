@@ -412,20 +412,22 @@ def plot_galaxy(
     markersize=1,
     r_err_alpha=0,
     phi_err_alpha=0.75,
+    plot_scatter=True,
     rasterize_scatter=False,
     plot_fit=True,
 ):
     assert bhsm is not None or galaxies is not None, \
         "One of `bhsm`, `galaxies` required"
     gals = galaxies if galaxies is not None else bhsm.galaxies
-    for i, arm in enumerate(gals.loc[sid]):
-        plt.scatter(
-            *arm,
-            c=(f'C{i}' if many_colored else 'k'),
-            s=markersize,
-            alpha=0.4,
-            rasterized=rasterize_scatter
-        )
+    if plot_scatter:
+        for i, arm in enumerate(gals.loc[sid]):
+            plt.scatter(
+                *arm,
+                c=(f'C{i}' if many_colored else 'k'),
+                s=markersize,
+                alpha=0.4,
+                rasterized=rasterize_scatter
+            )
     if not plot_fit:
         return
     if bhsm is None or trace is None:

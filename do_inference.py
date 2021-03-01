@@ -1,6 +1,6 @@
 import argparse
 import generate_sample
-from hierarchial_model import UniformBHSM
+from hierarchical_model import UniformBHSM
 import sys
 import pickle
 import pandas as pd
